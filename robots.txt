@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://matya1406-coder.github.io/free-tools/sitemap.xml
