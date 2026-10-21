@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free pilot for a self-hosted HTTP broker that limits agent operations, keeps service keys outside the agent, and enforces task call budgets.">
+<title>Put limits around your agent’s API access — Free pilot</title>
+<style>
+:root{color-scheme:light;--ink:#172b36;--muted:#425b66;--accent:#075e57;--paper:#f5f8f6}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.65 system-ui,sans-serif}main,footer{max-width:1000px;margin:auto;padding:28px 24px}header{padding:20px 0;border-bottom:1px solid #cbd8d2;font-weight:700}section{margin:52px 0}h1{font-size:clamp(2.1rem,6vw,3.8rem);line-height:1.12;max-width:850px;letter-spacing:-.035em}h2{line-height:1.25;font-size:1.7rem}p{max-width:760px}a{color:var(--accent);overflow-wrap:anywhere}a:focus-visible{outline:3px solid #c05a18;outline-offset:5px}.tag{display:inline-block;background:#dceee4;border-radius:24px;padding:6px 16px;font-weight:650;font-size:16px}.button{display:inline-block;background:var(--accent);color:white;padding:13px 22px;border-radius:8px;text-decoration:none;font-weight:700}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}.card{background:white;border:1px solid #cbd8d2;border-radius:12px;padding:22px}.card h3{margin-top:0}.muted{color:var(--muted)}li{margin-bottom:10px}footer{border-top:1px solid #cbd8d2;font-size:15px} @media(max-width:480px){main,footer{padding:20px}section{margin:36px 0}.button{display:block;text-align:center}}
+</style>
+</head>
+<body><main>
+<header>Agent API permissions · Self-hosted pilot</header>
+<section aria-labelledby="intro"><span class="tag">Free pilot for the first 5 customers</span>
+<h1 id="intro">Give your agent only the API access its task needs.</h1>
+<p>A sandbox does not decide which API calls an agent should be allowed to make. We build a small HTTP broker with agreed destinations and operations, expiring task permissions, and a hard call limit. Service credentials stay outside the agent environment.</p>
+<p>For developers building agent products and small software teams who want to run the controls themselves.</p>
+<a class="button" href="mailto:matya1406@gmail.com?subject=Agent%20permissions%20free%20pilot">Request a free pilot</a>
+<p class="muted">Email matya1406@gmail.com with one API, the operations you need, and your runtime. Public specifications are enough. Please do not send credentials or private data.</p></section>
+<section aria-labelledby="scope"><h2 id="scope">A concrete starting scope</h2><div class="grid">
+<article class="card"><h3>Restrict operations</h3><p>A broker-owned allowlist maps permitted operations to fixed HTTP destinations. The agent cannot choose arbitrary URLs or edit the policy.</p></article>
+<article class="card"><h3>Limit every task</h3><p>Short-lived broker tokens grant selected operations and share a persistent task call budget. Failed upstream attempts consume budget too.</p></article>
+<article class="card"><h3>Keep keys separate</h3><p>The broker adds service credentials. The agent receives a restricted task token, not the upstream service key.</p></article>
+</div></section>
+<section><h2>What we deliver</h2><ul>
+<li>Source code and Docker configuration for one agreed HTTP API connector.</li>
+<li>An integration example, local mock service, and denial tests for expiry, scope and call limits.</li>
+<li>Setup instructions, a threat model, and a deployment checklist covering network isolation and secret handling.</li>
+</ul><p>The pilot uses dummy keys and mock services. You install and operate it; we do not need access to your systems. You can start with the <a href="sample.md">free reference implementation</a> now.</p></section>
+<section><h2>How the free pilot works</h2><ol><li>Agree one API, allowed operations, task lifetime and call limits.</li><li>Build and demonstrate the connector against a mock using public specifications.</li><li>Hand over the code, test results and setup guide for your own evaluation.</li></ol><p>The first five customers receive this agreed pilot scope free, with no purchase commitment. Additional connectors and production operations need a separate scope. Any paid offer would follow the owner obtaining the required licence and an explicit agreement with you.</p></section>
+<section><h2>Clear limits</h2><p>This is an initial implementation for evaluation, not a security certification or a guarantee against compromise. Network restrictions must be enforced outside the agent, and the broker is a trusted component. Call limits do not by themselves cap spending or the effects of an allowed operation.</p><p>Broker permissions do not automatically create provider-native scoped credentials. Those depend on the API. Real deployments need connector-specific response filtering and review of the host, network and secret configuration.</p></section>
+<section><h2>Start with one API</h2><p>Tell us which operation the agent needs and what it must never be able to do.</p><a class="button" href="mailto:matya1406@gmail.com?subject=Agent%20permissions%20free%20pilot">Email matya1406@gmail.com</a></section>
+</main><footer>Free evaluation pilot · Customer-operated deployment · No production credentials required</footer></body></html>
