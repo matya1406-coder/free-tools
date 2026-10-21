@@ -147,3 +147,10 @@ Select these three invented Markdown notes:
 Expected: one missing target (`Missing`, Home line 2); two unlinked mentions (`Topic`, Home line 3, and `Home`, Topic line 1); no incoming links for Home and Alone. Topic has an incoming link. Home’s self-link does not rescue it. CSV contains the same five findings.
 
 To check ambiguity, add a second Topic.md in another folder: a duplicate-title finding and ambiguous Home link should appear, and mentions of Topic should no longer be suggested. For exclusions, place `[[Missing]]` inside fenced code or frontmatter: it should not be reported. A `[[Topic|label]]` link increments the excluded count, without resolving an incoming edge.
+
+
+---
+
+**Need it customised, or a full version for your work?** [Message us on Telegram](https://t.me/mostafa_ideas_2050_bot?start=r_page_2), no sign-up.
+
+**محتاج نسخة مخصصة أو كاملة لشغلك؟** [ابعتلنا على تليجرام](https://t.me/mostafa_ideas_2050_bot?start=r_page_2) من غير تسجيل.
